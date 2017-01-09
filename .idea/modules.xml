@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ingest.iml" filepath="$PROJECT_DIR$/.idea/modules/ingest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ingest-build.iml" filepath="$PROJECT_DIR$/.idea/modules/ingest-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prorobuf-example.iml" filepath="$PROJECT_DIR$/.idea/modules/prorobuf-example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prorobuf-example-build.iml" filepath="$PROJECT_DIR$/.idea/modules/prorobuf-example-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf-example.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf-example-build.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf-example-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/protocol.iml" filepath="$PROJECT_DIR$/.idea/modules/protocol.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/protocol-build.iml" filepath="$PROJECT_DIR$/.idea/modules/protocol-build.iml" />
     </modules>
