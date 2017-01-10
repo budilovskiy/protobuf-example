@@ -13,19 +13,19 @@ def commonSettings: Seq[Setting[_]] = Def.settings(
 )
 
 def protobufSettings(protocol: Project): Seq[Setting[_]] = Def.settings(
-  PB.targets in Compile := Seq(
-    scalapb.gen(flatPackage = true, javaConversions = true) -> (sourceDirectory in Compile)(_ / "generated").value,
-    PB.gens.java -> (sourceDirectory in Compile)(_ / "generated").value
-  ),
-  PB.externalIncludePath := ((classDirectory in protocol) in Compile).value
-)
 
-//def protobufSettings(protocol: Project) = PB.protobufSettings ++ Seq(
-//  version in PB.protobufConfig := "2.6.1",
-//  PB.runProtoc in PB.protobufConfig := (args => com.github.os72.protocjar.Protoc.runProtoc("-v261" +: args.toArray)),
-//  javaSource in PB.protobufConfig <<= (sourceDirectory in Compile)(_ / "generated"),
-//  scalaSource in PB.protobufConfig <<= (sourceDirectory in Compile)(_ / "generated"),
-//  PB.flatPackage in PB.protobufConfig := true,
-//  PB.externalIncludePath in PB.protobufConfig := ((classDirectory in protocol) in Compile).value,
-//  sourceDirectories in PB.protobufConfig <+= PB.externalIncludePath in PB.protobufConfig
-//)
+  PB.targets in Compile := Seq(
+    // generate case classes into
+    scalapb.gen(flatPackage = true) -> (sourceDirectory in Compile)(_ / "generated").value
+  ),
+
+  // where proto files are extracted to:
+  PB.externalIncludePath := ((classDirectory in protocol) in Compile).value,
+
+  // where to look for protos to compile
+  PB.protoSources in Compile := Seq(PB.externalIncludePath.value),
+
+  // When compiling in Windows, Python is used to bridge protoc and this JVM.
+  // To set the path for Python.exe:
+  PB.pythonExe := "C:\\Python27\\Python.exe"
+)
